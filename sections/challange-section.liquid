@@ -4,15 +4,14 @@
         <div class="row align-items-center">
             <div class="col-md-5">
                 <div class="challenge-info">
-                    <h2>Join The 5-Day Red Lip Challenge</h2>
-                    <p>Join our red lpstick ladies for our 5-day red lip challenge that will leave you feeling elevated and more confident than ever.</p>
-                    <p>The perfect way to kickstart your confidence journey! Find us on Instagram @wyrlbeauty</p>
+                    <h2>{{ section.settings.challange_title }}</h2>
+                    {{ section.settings.challange_description }}
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="section-box">
                     <div class="section-box-inner layer">
-                        <img src="assets/challenge-image.jpg" alt="challenge" />
+                        <img src="{{ section.settings.challange_image | img_url: '' }}" alt="challenge" />
                     </div>
                 </div>
             </div>
@@ -20,3 +19,35 @@
     </div>
 </div>
 <!-- Challenge area end here  -->
+
+{% schema %}
+{
+  "name": "Chalange Section",
+  "settings": [
+    {
+        "type": "text",
+        "id": "challange_title",
+        "label": "Challange Title",
+        "default": "oin The 5-Day Red Lip Challenge"
+    },
+    {
+        "type": "richtext",
+        "id": "challange_description",
+        "label": "Challange Description",
+        "default": "<p>Join our red lpstick ladies for our 5-day red lip challenge that will leave you feeling elevated and more confident than ever.</p><p>The perfect way to kickstart your confidence journey! Find us on Instagram @wyrlbeauty</p>"
+    },
+    {
+    "type": "image_picker",
+    "id": "challange_image",
+    "label": "Right Challange Image"
+    }
+
+  ],
+  "presets": [
+  {
+    "name": "Challange Section"
+  }
+]
+
+}
+{% endschema %}

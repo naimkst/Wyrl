@@ -14,12 +14,13 @@
             <div class="hero-info">
                 <h1>{{ section.settings.hero_title }}</h1>
                 {{ section.settings.hero_description }}
-                <form method="post" action="/cart/add" id="addToCart">
+                
+                <form method="post" action="/cart/add" class="addToCart">
+                    {% assign product = all_products[section.settings.add_to_bag] %}
                     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                    <input min="1" type="number" id="quantity" hidden name="quantity" value="1" />
-                    <input type="submit" value="{{ section.settings.add_to_bag_title }}" class="add-bag-btn" />
-                  </form>
-                <a href="{{ section.settings.add_to_bag }}" class="add-bag-btn">{{ section.settings.add_to_bag_title }}</a>
+                    <input min="1" type="number" id="quantity" hidden name="quantity" value="1"/>
+                    <input type="submit" value="Add to cart" class="add-bag-btn skipChart" />
+                </form>
             </div>
         </div>
     </div>
@@ -54,7 +55,7 @@
     "default": "Add To Bag"
     },
     {
-    "type": "url",
+    "type": "product",
     "id": "add_to_bag",
     "label": "Add To Bag"
     }

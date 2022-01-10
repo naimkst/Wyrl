@@ -33,21 +33,17 @@
   });
 
   //Add To Cart
-
-  $('.add-bag-btn').on('click', function(e) {
-    var form = $('#addToCart');
-    alert('Add to Cart');
+  $('.skipChart').on('click', function(e) {
+    var form = $('.addToCart');
     e.preventDefault()
-
     $.ajax({
         type: 'POST',                             
-        url: '/cart/42362991214844:1',
+        url: '/cart/add.js',
         dataType: 'json',                               
         data: form.serialize(),
-        contentType: false,
-        processData: false,
         success: function(data) {
-            document.location.href = '/cart/checkout';
+          console.log(data);
+          document.location.href = '/cart/checkout';
         }
     });
 })

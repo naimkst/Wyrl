@@ -4,28 +4,24 @@
         <div class="row align-items-center">
             <div class="col-md-5">
                 <div class="confidence-info">
-                    <h2>Confidence in Colour</h2>
-                    <p>Discover the true power of red lipstick as you instantly become ready to take on the world.</p>
+                    <h2>{{ section.settings.confident_title }}</h2>
+                    {{ section.settings.confident_description }}
                 </div>
                 <ul class="confidence-feature">
-                    <li class="single-feature">
-                        <img class="feature-icon" src="assets/feature-icon-1.png" alt="feature icon" />
-                        <div class="feature-right">
-                            <p>No matter what age you are, you should be able to shine from the moment you step out that front door.</p>
-                        </div>
-                    </li>
-                    <li class="single-feature">
-                        <img class="feature-icon" src="assets/feature-icon-2.png" alt="feature icon" />
-                        <div class="feature-right">
-                            <p>Created with clean and natural ingredients, without the sacrificing the soft premium look and nourishing qualities of traditional lipstick products.</p>
-                        </div>
-                    </li>
+                    {% for block in section.blocks %}
+                        <li class="single-feature">
+                            <img class="feature-icon" src="{{ block.settings.confident_list_image | img_url: '' }}" alt="feature icon" />
+                            <div class="feature-right">
+                                <p>{{ block.settings.confident_name }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="col-lg-7">
                 <div class="section-box">
                     <div class="section-box-inner layer">
-                        <img src="assets/confidence-image.jpg" alt="confidence" />
+                        <img src="{{ section.settings.right_confident_image | img_url: '' }}" alt="confidence" />
                     </div>
                 </div>
             </div>
@@ -33,3 +29,60 @@
     </div>
 </div>
 <!-- Confidence area end here  -->
+
+{% schema %}
+{
+  "name": "Confident Section",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "right_confident_image",
+        "label": "Right Confident Image"
+    },
+    {
+        "type": "text",
+        "id": "confident_title",
+        "label": "Confident Title",
+        "default": "Confidence In Colour"   
+    },  
+    {
+        "type": "richtext",
+        "id": "confident_description",
+        "label": "Confident Description",
+        "default": "<p>Discover the true power of red lipstick as you instantly become ready to take on the world.</p>"
+    }
+  ],
+  "blocks":[
+    {
+        "name": "Confident List",
+        "type": "product",
+        "settings": [
+                {
+                    "type": "text",
+                    "id": "confident_name",
+                    "label": "Confident List Name",
+                    "default": "No matter what age you are, you should be able to shine from the moment you step out that front door."
+                },
+                {
+                    "type": "image_picker",
+                    "id": "confident_list_image",
+                    "label": "Confident List Image"
+                }
+            ]
+        }
+    ],
+
+  "presets": [
+  {
+    "name": "Confidence Section",
+    "name": "Confidence List",
+    "blocks": [
+        {
+        "type": "product"
+        }
+    ]
+  }
+]
+
+}
+{% endschema %}

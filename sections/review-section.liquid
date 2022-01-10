@@ -1,64 +1,111 @@
-
 <!-- review area start here  -->
 <div class="review-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="single-review">
-                    <div class="review-top">
-                        <ul class="review-list">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                    </div>
-                    <div class="review-head">
-                        <h3>beautiful color !</h3>
-                        <p>info on the kw site led me to this color and i love it. lipstick feels great and lasts!</p>
-                        <span class="date">11/19/22</span>
-                    </div>
-                    <div class="review-body">
-                        <h3><span>booth E.</span> verified buyer</h3>
-                        <ul>
-                            <li>recommend: <span>yes</span></li>
-                            <li>skin ton: <span>light</span></li>
-                            <li>skin type: <span>normal</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="single-review">
-                    <div class="review-top">
-                        <ul class="review-list">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                    </div>
-                    <div class="review-head">
-                        <h3>beautiful color !</h3>
-                        <p>info on the kw site led me to this color and i love it. lipstick feels great and lasts!</p>
-                        <span class="date">11/19/22</span>
-                    </div>
-                    <div class="review-body">
-                        <h3><span>booth E.</span> verified buyer</h3>
-                        <ul>
-                            <li>recommend: <span>yes</span></li>
-                            <li>skin ton: <span>light</span></li>
-                            <li>skin type: <span>normal</span></li>
-                        </ul>
+            {% for block in section.blocks %}
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-review">
+                        <div class="review-top">
+                            <ul class="review-list">
+                                {% if block.settings.review_list_rating == 1 %}
+                                <li><i class="fas fa-star"></i></li>
+                                {% endif %}
+
+                                {% if block.settings.review_list_rating == 2 %}
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                {% endif %}
+
+                                {% if block.settings.review_list_rating == 3 %}
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                {% endif %}
+
+                                {% if block.settings.review_list_rating == 4 %}
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                {% endif %}
+
+                                {% if block.settings.review_list_rating == 5 %}
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="review-head">
+                            <h3>{{ block.settings.review_list_name }}</h3>
+                            <p>{{ block.settings.review_list_description }}</p>
+                            <span class="date">{{ block.settings.review_list_date }}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="load-area text-center">
+        <!-- <div class="load-area text-center">
             <a href="#" class="primary-btn">load more reviews</a>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- review area end here  -->
+
+{% schema %}
+{
+  "name": "Review Section",
+  "settings": [
+   
+  ],
+  "blocks":[
+    {
+        "name": "Review List",
+        "type": "testimonial",
+        "settings": [
+                {
+                    "type": "text",
+                    "id": "review_list_name",
+                    "label": "review List Name",
+                    "default": "Beautiful Color!"
+                },
+                {
+                    "type": "textarea",
+                    "id": "review_list_description",
+                    "label": "Review Description",
+                    "default": "info on the kw site led me to this color and i love it. lipstick feels great and lasts!"
+                },
+                {
+                    "type": "text",
+                    "id": "review_list_date",
+                    "label": "review List Date",
+                    "default": "11/19/22"
+                },
+                {
+                    "type": "range",
+                    "id": "review_list_rating",
+                    "label": "review List Rating",
+                    "default": 5,
+                    "min": 1,
+                    "max": 5
+                }
+
+            ]
+        }
+    ],
+
+  "presets": [
+  {
+    "name": "Review Section",
+    "blocks": [
+        {
+        "type": "testimonial"
+        }
+    ]
+  }
+]
+
+}
+{% endschema %}

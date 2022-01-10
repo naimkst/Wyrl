@@ -1,3 +1,13 @@
+<!-- Beauty feature area end here  -->
+<div class="confidence-power text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <h2>{{ section.settings.beauty_title }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Beauty feature area start here  -->
 <div class="beauty-feature-area">
     <div class="container">
@@ -5,46 +15,89 @@
             <div class="col-md-7">
                 <div class="section-box box-left">
                     <div class="section-box-inner layer">
-                        <iframe src="https://www.youtube.com/embed/AIJZMm5XMkQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="{{ section.settings.beauty_video_link }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="beauty-feature-right">
-                    <h2 class="beauty-title">WYRL Beauty is More Than Just Lipstick</h2>
+                    <h2 class="beauty-title">{{ section.settings.beauty_list_tilte }}</h2>
                     <ul class="beauty-feature">
+                        {% for block in section.blocks %}
                         <li class="single-feature">
-                            <img class="feature-icon" src="assets/beauty-icon-1.png" alt="feature icon" />
+                            <img class="feature-icon" src="{{ block.settings.beauty_list_image | img_url: '' }}" alt="feature icon" />
                             <div class="feature-right">
-                                <h3>Building Confidence </h3>
+                                <h3>{{ block.settings.beauty_list_title }}</h3>
                             </div>
                         </li>
-                        <li class="single-feature">
-                            <img class="feature-icon" src="assets/beauty-icon-2.png" alt="feature icon" />
-                            <div class="feature-right">
-                                <h3>Clean + Curated</h3>
-                            </div>
-                        </li>
-                        <li class="single-feature">
-                            <img class="feature-icon" src="assets/beauty-icon-3.png" alt="feature icon" />
-                            <div class="feature-right">
-                                <h3>Giving Back</h3>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
-                    <img class="certified-image" src="assets/certified.png" alt="certified" />
+                    <img class="certified-image" src="{{ section.settings.right_confident_image | img_url: '' }}" alt="certified" />
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Beauty feature area end here  -->
-<div class="confidence-power text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <h2>Red lip confidence is a power that can be applied whenever you need it - AK</h2>
-            </div>
-        </div>
-    </div>
-</div>
+
+{% schema %}
+{
+  "name": "Beauty Section",
+  "settings": [
+    {
+        "type": "text",
+        "id": "beauty_title",
+        "label": "Beauty Section Title",
+        "default": "Red Lip Confidence Is A Power That Can Be Applied Whenever You Need It - AK"
+    },
+    {
+        "type": "text",
+        "id": "beauty_video_link",
+        "label": "Beauty Video Link",
+        "default": "https://www.youtube.com/embed/AIJZMm5XMkQ"   
+    },  
+    {
+        "type": "image_picker",
+        "id": "right_confident_image",
+        "label": "Right Confident Image"
+    },
+    {
+        "type": "text",
+        "id": "beauty_list_tilte",
+        "label": "Beauty List Title",
+        "default": "WYRL Beauty Is More Than Just Lipstick"   
+    }
+  ],
+  "blocks":[
+    {
+        "name": "Beauty List",
+        "type": "product",
+        "settings": [
+                {
+                    "type": "text",
+                    "id": "beauty_list_title",
+                    "label": "Beauty List Title",
+                    "default": "Beauty List Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "beauty_list_image",
+                    "label": "Beauty List Image"
+                }
+            ]
+        }
+    ],
+
+  "presets": [
+  {
+    "name": "Confidence Section",
+    "name": "Confidence List",
+    "blocks": [
+        {
+        "type": "product"
+        }
+    ]
+  }
+]
+
+}
+{% endschema %}

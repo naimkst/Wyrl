@@ -8,11 +8,28 @@
     },
     "confident-section": {
       "type": "confident-section"
+    },
+    "beauty-section": {
+      "type": "beauty-section"
+    },
+    "bundle-section": {
+      "type": "bundle-section"
+    },
+    "challange-section": {
+      "type": "challange-section"
+    },
+    "review-section": {
+      "type": "review-section"
     }
+
   },
   "order": [
     "hero-section",
     "collection-section",
-    "confident-section"
+    "confident-section",
+    "beauty-section",
+    "bundle-section",
+    "challange-section",
+    "review-section"
   ]
 }

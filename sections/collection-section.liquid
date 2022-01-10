@@ -1,81 +1,75 @@
 <!-- Collection area start here  -->
 <div class="collection-area">
     <div class="collection-top text-center">
-        <h2 class="title">The Marble Collection</h2>
-        <a href="#" class="view-btn">View Red Lip Confidence Bundles</a>
+        <h2 class="title">{{ section.settings.collection_title }}n</h2>
+        <a href="#" class="view-btn">{{ section.settings.collection_description }}</a>
     </div>
     <div class="collection-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-collection">
-                        <div class="collection-thumbnail">
-                            <a href="#">
-                                <img class="thumbnail" src="assets/collection-image-1.jpg" alt="collection" />
-                                <img class="hover-thumbnail" src="assets/collection-hover-image-1.jpg" alt="collection" />
-                            </a>
+                {% for product in collections[section.settings.collection_product].products %}
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-collection">
+                            <div class="collection-thumbnail">
+                                <a href="#">
+                                    <img class="thumbnail" src="{{ product.featured_image.src | img_url: '' }}" alt="collection" />
+                                    <img class="hover-thumbnail" src="{{ product.images[1] | img_url: '' }}" alt="collection" />
+                                </a>
+                            </div>
+                            <div class="title-review">
+                                <h3 class="collection-title"><a href="#">{{ product.title }}</a></h3>
+                                <ul class="review-area">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <p>{{ product.description }}</p>
+                            <form method="post" action="/cart/add" class="addToCart">
+                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                <input min="1" type="number" id="quantity" hidden name="quantity" value="1"/>
+                                <input type="submit" value="Add to Bag - {{ product.price | money }}" class="add-bag skipChart" />
+                            </form>
                         </div>
-                        <div class="title-review">
-                            <h3 class="collection-title"><a href="#">IGNITE</a></h3>
-                            <ul class="review-area">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <p>You and your lips will love this gorgeous bold-red seamlessly marbled with a powerful sunset orange shade. IGNITE flatters just about any skin tone and blends in gorgeously with your lips. You can wear it alone or layer it with BOOST to play with different depths along the red spectrum. Perfect for every season.</p>
-                        <a href="#" class="add-bag">Add to Bag - <span class="price">£38</span></a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-collection">
-                        <div class="collection-thumbnail">
-                            <a href="#">
-                                <img class="thumbnail" src="assets/collection-image-2.jpg" alt="collection" />
-                            <img class="hover-thumbnail" src="assets/collection-hover-image-2.jpg" alt="collection" />
-                            </a>
-                        </div>
-                        <div class="title-review">
-                            <h3 class="collection-title"><a href="#">SPARKLE</a></h3>
-                            <ul class="review-area">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <p>This beauty glides on like no other neutral-red. Yep, a neutral-red. It holds the power and DNA of a visually bold red lip. The first of its kind. The essence of your red lip with SPARKLE is intentionally subdued in one sense but shining SPARKLE in another. This beauty is your power from the inside-out as you embrace your mantra in your mind and heart.</p>
-                        <a href="#" class="add-bag">Add to Bag - <span class="price">£38</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-collection">
-                        <div class="collection-thumbnail">
-                            <a href="#">
-                                <img class="thumbnail" src="assets/collection-image-3.jpg" alt="collection" />
-                                <img class="hover-thumbnail" src="assets/collection-hover-image-3.jpg" alt="collection" />
-                            </a>
-                        </div>
-                        <div class="title-review">
-                            <h3 class="collection-title"><a href="#">BOOST</a></h3>
-                            <ul class="review-area">
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                                <li><i class="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <p>BOOST your day with a burst of energetic bright red marbled throughout this gorgeous deeper red. Girl, you are on ready to take off! These colours blend beautifully together and you will find each layer of application playfully inviting a little bit more red or a little bit deeper depending which wants to come out and play more that day. This blend carries powerful energy to BOOST your day.</p>
-                        <a href="#" class="add-bag">Add to Bag - <span class="price">£38</span></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
 
 <!-- Collection area end here  -->
+
+{% schema %}
+{
+  "name": "Collection Section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "collection_title",
+    "label": "Collection Title",
+    "default": "The Marble Collection"
+    },
+    {
+      "type": "text",
+      "id": "collection_description",
+      "label": "Collection Description",
+      "default": "View Red Lip Confidence Bundles"
+    },
+    {
+    "type": "collection",
+    "id": "collection_product",
+    "label": "Add Product"
+    }
+
+  ],
+  "presets": [
+  {
+    "name": "Header Section"
+  }
+]
+
+}
+{% endschema %}

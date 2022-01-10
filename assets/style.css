@@ -647,6 +647,9 @@ scrollUp
   text-align: center;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  border: none;
+  box-shadow: none;
+  width: 100%;
 }
 .hero-banner .hero-info .add-bag-btn:hover {
   color: var(--white);
@@ -766,6 +769,9 @@ scrollUp
   font-weight: 400;
   text-transform: capitalize;
   color: var(--primary-color);
+  border: none;
+  background: transparent;
+  padding: 0;
   border-bottom: 1px solid var(--primary-color);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -1051,6 +1057,7 @@ scrollUp
   color: var(--white);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  border: none;
 }
 .confidence-bundle .single-confidence .confidence-body .add-btn:hover {
   color: var(--white);
@@ -1059,6 +1066,7 @@ scrollUp
 .confidence-bundle .single-confidence .confidence-body .add-btn.active {
   color: var(--white);
   background: var(--primary-color);
+  border: none;
 }
 .confidence-bundle .single-confidence .confidence-body .bonus-text {
   margin: 1.5rem 0;
