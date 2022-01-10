@@ -1,0 +1,59 @@
+<!-- header area start here  -->
+<header class="header-area" id="sticky">
+  <div class="top-bar text-center">
+      <p>active confidence today</p>
+  </div>
+  <div class="header-bottom">
+      <div class="container">
+          <div class="header-bottom-wrap">
+              <nav class="menu-area">
+                  <ul>
+                    {% for link in linklists[section.settings.main_menu].links %}
+                        {% if link.links == blank %}
+                            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                  </ul>
+              </nav>
+              <div class="logo-area">
+                  <a href="/" class="brand-logo"><img src="{{ section.settings.logo | img_url: ''}}" alt="wyrl" /></a>
+              </div>
+              <div class="header-right">
+                  <a href="#" class="cart-btn"><i class="fas fa-shopping-bag"><span class="cart-number">{{ cart.item_count }}</span></i></a>
+                  <button class="toggle-bar"><i class="fas fa-bars"></i></button>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header Style",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "richtext",
+      "id": "top_notice",
+      "label": "Top Notice",
+      "default": "<p>Active Confidence Today</p>"
+    },
+    {
+    "type": "link_list",
+    "id": "main_menu",
+    "label": "Main menu"
+    }
+
+  ],
+  "presets": [
+  {
+    "name": "Header Section"
+  }
+]
+
+}
+{% endschema %}

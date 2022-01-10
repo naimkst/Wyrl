@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "hero-section": {
+      "type": "hero-section"
+    },
+    "collection-section": {
+      "type": "collection-section"
+    },
+    "confident-section": {
+      "type": "confident-section"
+    }
+  },
+  "order": [
+    "hero-section",
+    "collection-section",
+    "confident-section"
+  ]
+}

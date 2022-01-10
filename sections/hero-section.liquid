@@ -1,0 +1,70 @@
+<!-- header area end here  -->
+<!-- hero banenr area start here  -->
+<style>
+    .hero-banner {
+    background-image: url({{ section.settings.hero_background | img_url: '' }});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+</style>
+<div class="hero-banner">
+    <div class="container">
+        <div class="hero-banner-wrap">
+            <div class="hero-info">
+                <h1>{{ section.settings.hero_title }}</h1>
+                {{ section.settings.hero_description }}
+                <form method="post" action="/cart/add" id="addToCart">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                    <input min="1" type="number" id="quantity" hidden name="quantity" value="1" />
+                    <input type="submit" value="{{ section.settings.add_to_bag_title }}" class="add-bag-btn" />
+                  </form>
+                <a href="{{ section.settings.add_to_bag }}" class="add-bag-btn">{{ section.settings.add_to_bag_title }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hero banenr area end here  -->
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_background",
+      "label": "Hero Background"
+    },
+    {
+    "type": "text",
+    "id": "hero_title",
+    "label": "Hero Title",
+    "default": "Wear Your Red Lips, Confidently"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_description",
+      "label": "Hero Description",
+      "default": "<p>The most powerful tool for confidence begins with a healthy mindset. Step into your confidence and overcome anything that gets in your way with the power of a red lip. It’s not just you VS the world, this is you VS you and you get to choose to come out on top every single day. </p><p>Designed to get rid of toxic thoughts and toxic talk by confidence curator Alex Klein, the Red Lip Confidence Bundle is oozing with confidence, to make the perfect clean beauty companion that can support you no matter what challenge you face.</p>"
+    },
+    {
+    "type": "text",
+    "id": "add_to_bag_title",
+    "label": "Add To Bag Text",
+    "default": "Add To Bag"
+    },
+    {
+    "type": "url",
+    "id": "add_to_bag",
+    "label": "Add To Bag"
+    }
+
+  ],
+  "presets": [
+  {
+    "name": "Header Section"
+  }
+]
+
+}
+{% endschema %}

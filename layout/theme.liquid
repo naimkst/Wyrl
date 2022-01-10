@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>WYRL Responsive  HTML5 Template</title>
+        <meta name="description" content="WYRL Responsive  HTML5 Template " />
+        <meta name="keywords" content="business,corporate, creative, woocommerach, design, gallery, minimal, modern, landing page, cv, designer, freelancer, html, one page, personal, portfolio, programmer, responsive, nft, p2p, vcard, one page" />
+        <meta name="author" content="WYRL" />
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <!-- fonts file -->
+        {{ content_for_header }} 
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- css file  -->
+        <link rel="stylesheet" href="{{ 'plugins.css' | asset_url }}" />
+        <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}" />
+        <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" />
+        <link rel="stylesheet" href="{{ 'responsive.css' | asset_url }}" />
+        <script src="{{ 'modernizr-3.11.2.min.js' | asset_url }}"></script>
+    </head>
+    <body>
+        
+      {% section 'header' %}
+
+      {{ content_for_layout }}
+      
+       {% section 'footer' %}
+    </body>
+</html>
