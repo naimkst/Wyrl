@@ -13,26 +13,38 @@
     "collection-section": {
       "type": "collection-section",
       "settings": {
+        "collection_title": "The Marble Collection",
+        "collection_description": "View Red Lip Confidence Bundles",
+        "collection_product": "product"
       }
     },
     "confident-section": {
       "type": "confident-section",
       "settings": {
+        "confident_title": "Confidence In Colour",
+        "confident_description": "<p>Discover the true power of red lipstick as you instantly become ready to take on the world.<\/p>"
       }
     },
     "beauty-section": {
       "type": "beauty-section",
       "settings": {
+        "beauty_title": "Red Lip Confidence Is A Power That Can Be Applied Whenever You Need It - AK",
+        "beauty_video_link": "https:\/\/www.youtube.com\/embed\/AIJZMm5XMkQ",
+        "beauty_list_tilte": "WYRL Beauty Is More Than Just Lipstick"
       }
     },
     "bundle-section": {
       "type": "bundle-section",
       "settings": {
+        "bundle_title": "Choose Your <span>Red Lip Confidence<\/span> Bundle Now",
+        "bundle_product": ""
       }
     },
     "challange-section": {
       "type": "challange-section",
       "settings": {
+        "challange_title": "oin The 5-Day Red Lip Challenge",
+        "challange_description": "<p>Join our red lpstick ladies for our 5-day red lip challenge that will leave you feeling elevated and more confident than ever.<\/p><p>The perfect way to kickstart your confidence journey! Find us on Instagram @wyrlbeauty<\/p>"
       }
     },
     "review-section": {
