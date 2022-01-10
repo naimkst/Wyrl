@@ -16,21 +16,30 @@
       }
     },
     "confident-section": {
-      "type": "confident-section"
+      "type": "confident-section",
+      "settings": {
+      }
     },
     "beauty-section": {
-      "type": "beauty-section"
+      "type": "beauty-section",
+      "settings": {
+      }
     },
     "bundle-section": {
-      "type": "bundle-section"
+      "type": "bundle-section",
+      "settings": {
+      }
     },
     "challange-section": {
-      "type": "challange-section"
+      "type": "challange-section",
+      "settings": {
+      }
     },
     "review-section": {
-      "type": "review-section"
+      "type": "review-section",
+      "settings": {
+      }
     }
-
   },
   "order": [
     "hero-section",
