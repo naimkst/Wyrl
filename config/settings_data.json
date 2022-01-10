@@ -12,15 +12,16 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/wyrl.png",
           "footer_about": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius inventore reprehenderit unde cumque debitis .<\/p>",
           "copy_right_text": "© 2022. All Rights Reserved by wyrl",
           "address": "5 North 03th Avenue,Penscola, FL 32503, New York",
           "phone": "+1 965 047 658 23",
           "email": "xalkacom54@gmail.com",
           "footer_menu_one_title": "Marketplace",
-          "footer_menu_one": "",
+          "footer_menu_one": "footer",
           "footer_menu_two_title": "My Account",
-          "footer_menu_two": ""
+          "footer_menu_two": "footer"
         }
       }
     },
