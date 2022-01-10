@@ -20,16 +20,66 @@
     },
     "confident-section": {
       "type": "confident-section",
+      "blocks": {
+        "bf4fd9aa-28c3-4591-8eef-9316a7d7c361": {
+          "type": "product",
+          "settings": {
+            "confident_name": "No matter what age you are, you should be able to shine from the moment you step out that front door.",
+            "confident_list_image": "shopify:\/\/shop_images\/feature-icon-1_9d973dd9-a46f-4bf1-95ef-078aa581ab59.png"
+          }
+        },
+        "96cd5474-a608-4179-ac1a-9ac876c635ae": {
+          "type": "product",
+          "settings": {
+            "confident_name": "No matter what age you are, you should be able to shine from the moment you step out that front door.",
+            "confident_list_image": "shopify:\/\/shop_images\/feature-icon-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "bf4fd9aa-28c3-4591-8eef-9316a7d7c361",
+        "96cd5474-a608-4179-ac1a-9ac876c635ae"
+      ],
       "settings": {
+        "right_confident_image": "shopify:\/\/shop_images\/confidence-image.jpg",
         "confident_title": "Confidence In Colour",
         "confident_description": "<p>Discover the true power of red lipstick as you instantly become ready to take on the world.<\/p>"
       }
     },
     "beauty-section": {
       "type": "beauty-section",
+      "blocks": {
+        "ec243a28-f091-4522-9e02-ba5e2f2a7ac3": {
+          "type": "product",
+          "settings": {
+            "beauty_list_title": "Beauty List Title",
+            "beauty_list_image": "shopify:\/\/shop_images\/feature-icon-1_9d973dd9-a46f-4bf1-95ef-078aa581ab59.png"
+          }
+        },
+        "e67e87c0-dd33-4bb3-ae38-c051d10f5e84": {
+          "type": "product",
+          "settings": {
+            "beauty_list_title": "Beauty List Title",
+            "beauty_list_image": "shopify:\/\/shop_images\/beauty-icon-2.png"
+          }
+        },
+        "f3484d1f-6186-4497-8f78-c66cb092b7ae": {
+          "type": "product",
+          "settings": {
+            "beauty_list_title": "Beauty List Title",
+            "beauty_list_image": "shopify:\/\/shop_images\/beauty-icon-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "ec243a28-f091-4522-9e02-ba5e2f2a7ac3",
+        "e67e87c0-dd33-4bb3-ae38-c051d10f5e84",
+        "f3484d1f-6186-4497-8f78-c66cb092b7ae"
+      ],
       "settings": {
         "beauty_title": "Red Lip Confidence Is A Power That Can Be Applied Whenever You Need It - AK",
         "beauty_video_link": "https:\/\/www.youtube.com\/embed\/AIJZMm5XMkQ",
+        "right_confident_image": "shopify:\/\/shop_images\/certified.png",
         "beauty_list_tilte": "WYRL Beauty Is More Than Just Lipstick"
       }
     },
