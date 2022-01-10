@@ -19,7 +19,7 @@
                   <a href="/" class="brand-logo"><img src="{{ section.settings.logo | img_url: ''}}" alt="wyrl" /></a>
               </div>
               <div class="header-right">
-                  <a href="#" class="cart-btn"><i class="fas fa-shopping-bag"><span class="cart-number">{{ cart.item_count }}</span></i></a>
+                  <a href="#" class="cart-btn"><i class="fas fa-shopping-bag">{%if cart.item_count != 0 %}<span class="cart-number">{{ cart.item_count }}</span>{% endif %}</i></a>
                   <button class="toggle-bar"><i class="fas fa-bars"></i></button>
               </div>
           </div>
