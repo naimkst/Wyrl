@@ -1,13 +1,24 @@
 {
   "sections": {
     "hero-section": {
-      "type": "hero-section"
+      "type": "hero-section",
+      "settings": {
+        "hero_background": "shopify:\/\/shop_images\/hero-banner-image.jpg",
+        "hero_title": "Wear Your Red Lips, Confidently",
+        "hero_description": "<p>The most powerful tool for confidence begins with a healthy mindset. Step into your confidence and overcome anything that gets in your way with the power of a red lip. It’s not just you VS the world, this is you VS you and you get to choose to come out on top every single day. <\/p><p>Designed to get rid of toxic thoughts and toxic talk by confidence curator Alex Klein, the Red Lip Confidence Bundle is oozing with confidence, to make the perfect clean beauty companion that can support you no matter what challenge you face.<\/p>",
+        "add_to_bag_title": "Add To Bag",
+        "add_to_bag": "shopify:\/\/products\/ignite"
+      }
     },
     "collection-section": {
-      "type": "collection-section"
+      "type": "collection-section",
+      "settings": {
+      }
     },
     "confident-section": {
-      "type": "confident-section"
+      "type": "confident-section",
+      "settings": {
+      }
     }
   },
   "order": [
