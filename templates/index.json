@@ -100,6 +100,30 @@
     },
     "review-section": {
       "type": "review-section",
+      "blocks": {
+        "25258dce-2c09-4cff-b977-d0cef59963f7": {
+          "type": "testimonial",
+          "settings": {
+            "review_list_name": "Beautiful Color!",
+            "review_list_description": "info on the kw site led me to this color and i love it. lipstick feels great and lasts!",
+            "review_list_date": "11\/19\/22",
+            "review_list_rating": 5
+          }
+        },
+        "053f2c72-7771-4021-84f3-1d44ddee29be": {
+          "type": "testimonial",
+          "settings": {
+            "review_list_name": "Beautiful Color!",
+            "review_list_description": "info on the kw site led me to this color and i love it. lipstick feels great and lasts!",
+            "review_list_date": "11\/19\/22",
+            "review_list_rating": 3
+          }
+        }
+      },
+      "block_order": [
+        "25258dce-2c09-4cff-b977-d0cef59963f7",
+        "053f2c72-7771-4021-84f3-1d44ddee29be"
+      ],
       "settings": {
       }
     }
