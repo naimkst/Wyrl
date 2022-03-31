@@ -30,7 +30,8 @@
                             <form method="post" action="/cart/add" class="addToCart">
                                 <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
                                 <input min="1" type="number" id="quantity" hidden name="quantity" value="1"/>
-                                <input type="submit" value="Add to Bag - {{ product.price | money }}" class="add-bag skipChart" />
+                                <input type="submit" value="Add to Bag - £{{ product.price }}" class="add-bag skipChart" />
+                                
                             </form>
                         </div>
                     </div>
