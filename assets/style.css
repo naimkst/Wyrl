@@ -661,7 +661,7 @@ scrollUp
 --------------------------*/
 .collection-area .collection-top {
   padding: 23.5rem 0 25rem 0;
-  background: url("../images/collection-top-bg.jpg");
+  background: url("../assets/collection-top-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -901,6 +901,7 @@ scrollUp
   font-weight: 400;
   text-transform: capitalize;
   color: var(--black);
+  font-style: italic;
 }
 
 /*-------------------------
