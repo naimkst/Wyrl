@@ -26,7 +26,7 @@
                             <input type="submit" value="ADD TO BAG - {{ product.price | money }}" class="add-btn skipChart {% if product.metafields.my_fields.popular_bundle_product == true %} active {% endif %}" />
                         </form>
                         <p class="bonus-text"><span>BONUS:</span>  {{ product.metafields.my_fields.bonus_text }}</p>
-                        <h5 class="shipping-text"><img class="icon" src="/assets/plane.svg" alt="plane" /> FAST SHIPPING</h5>
+                        <h5 class="shipping-text"><img class="icon" src="{{ 'plane.svg' | asset_url }}" alt="plane" /> FAST SHIPPING</h5>
                     </div>
                 </div>
             </div>
